@@ -1,0 +1,63 @@
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+public class game {
+    public static void main(String[] args) throws InterruptedException {
+        Scanner scanner = new Scanner(System.in);
+
+        // Taking user input
+        String name = JOptionPane.showInputDialog("Let's play a game, please enter your name:");
+
+        if (name == null || name.trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "You didn't enter a name. Exiting the game.");
+            return;
+        }
+
+        JOptionPane.showMessageDialog(null, "OK " + name + ", please follow the instructions in the console.");
+        System.out.println("Let's play a game or a magic trick, you might say!");
+        Thread.sleep(2000);
+
+        System.out.println("Choose how much money you want between 1 to 100 :");
+
+        if (!scanner.hasNextInt()) {
+            System.out.println("Invalid input! Please enter a valid number.");
+            return;
+        }
+
+        int num = scanner.nextInt();
+
+        if (num < 1 || (num > 100 && num != 1000)) {
+            System.out.println("Invalid choice! Please enter a number between 1 to 100 or exactly 1000.");
+            return;
+        }
+
+        System.out.println("Borrow the same amount of money from your friend.");
+        Thread.sleep(5000);
+        int num1 = num * 2;
+
+        System.out.println("Let's say I lend you 62 bucks.");
+        Thread.sleep(1000);
+        int lend = 62;
+
+        System.out.println("Now, add all the money together and don't disclose it.");
+        Thread.sleep(30000);
+        int totalMoney = num1 + lend;
+
+        System.out.println("Give half of the whole money to God.");
+        Thread.sleep(5000);
+        int halfMoney = totalMoney / 2;
+
+        System.out.println("Return the borrowed money to your friend.");
+        int remainingMoney = halfMoney - num;
+        Thread.sleep(2000);
+        System.out.println("loading");
+        Thread.sleep(2000);
+        System.out.println("loading");
+        Thread.sleep(2000);
+        System.out.println("gotcha!!");
+        Thread.sleep(900);
+
+
+        System.out.println("the money you are left with is: " + remainingMoney);
+    }
+}
